@@ -18,12 +18,12 @@ public class AdminMenu {
             System.out.println("┃                                                  ADMINISTRATOR MENU                                                  ┃");
             System.out.println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
             System.out.println("┃                                        ┃                                    ┃                                        ┃");
-            System.out.println("┃       1. Quản lý Danh mục (Category)   ┃     2. Quản lý Sản phẩm (Product)  ┃      3. Quản lý Đơn hàng (Order)       ┃");
+            System.out.println("┃          1. Quản lý Danh mục           ┃       2. Quản lý Sản phẩm          ┃         3. Quản lý Đơn hàng            ┃");
             System.out.println("┃                                        ┃                                    ┃                                        ┃");
             System.out.println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-            System.out.println("┃                                                           ┃                                                          ┃");
-            System.out.println("┃                       0. Đăng xuất                        ┃                                                          ┃");
-            System.out.println("┃                                                           ┃                                                          ┃");
+            System.out.println("┃                                                                                                                      ┃");
+            System.out.println("┃                                                      0. Đăng xuất                                                    ┃");
+            System.out.println("┃                                                                                                                      ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
             String choice = InputUtil.getString(scanner, "Lựa chọn của bạn (0-3): ", "Lỗi: Không được để trống!");
             switch (choice) {

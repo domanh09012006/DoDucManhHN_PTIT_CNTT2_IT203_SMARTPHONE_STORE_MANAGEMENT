@@ -44,8 +44,8 @@ public class OrderMenu {
         if (orderId == 0) return;
 
         System.out.println("Chọn trạng thái mới:");
-        System.out.println("1. COMPLETED (Đã hoàn thành / Đã giao)");
-        System.out.println("2. CANCELED (Đã hủy)");
+        System.out.println("1. COMPLETED");
+        System.out.println("2. CANCELED");
 
         String statusChoice = InputUtil.getString(scanner, "Lựa chọn (1-2): ", "Lỗi: Không được để trống!");
 

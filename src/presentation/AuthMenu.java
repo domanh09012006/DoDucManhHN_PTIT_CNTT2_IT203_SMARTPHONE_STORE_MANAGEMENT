@@ -53,9 +53,7 @@ public class AuthMenu {
             }
             System.out.println("Lỗi: Tài khoản không tồn tại. Vui lòng nhập lại!");
         }
-
         User user = null;
-
         while (true) {
             String password = InputUtil.getString(scanner, "Nhập Mật khẩu: ", "Lỗi: Mật khẩu không được để trống!");
             user = authService.login(email, password);
