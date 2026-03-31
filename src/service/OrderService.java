@@ -46,41 +46,39 @@ public class OrderService {
             System.out.println("Bạn chưa có đơn hàng nào trong hệ thống.");
             return;
         }
-
-        System.out.println("┏━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓");
-        System.out.println("┃  ID  ┃        Ngày đặt hàng     ┃     Tổng tiền    ┃       Trạng thái       ┃");
-        System.out.println("┣━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━┫");
+        System.out.println("------------------------------------------------------------------------------");
+        System.out.printf("| %-4s | %-24s | %-16s | %-22s |%n",
+                "ID", "Ngày đặt hàng", "Tổng tiền", "Trạng thái");
+        System.out.println("------------------------------------------------------------------------------");
 
         for (Order order : orders) {
-            System.out.printf("┃ %-4d ┃ %-24s ┃ %,14.0f đ ┃ %-22s ┃\n",
+            System.out.printf("| %-4d | %-24s | %,14.0f đ | %-22s |%n",
                     order.getId(),
                     order.getCreatedAt().toString(),
                     order.getTotal(),
                     order.getStatus());
         }
-        System.out.println("┗━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━┛");
+        System.out.println("------------------------------------------------------------------------------");
     }
     public void displayAllOrders() {
         List<Order> orders = orderDAO.getAllOrders();
-
         if (orders.isEmpty()) {
             System.out.println("Hệ thống hiện chưa có bất kỳ đơn hàng nào.");
             return;
         }
-
-        System.out.println("\n┏━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓");
-        System.out.println("┃  ID  ┃     Email Khách hàng      ┃      Ngày đặt hàng      ┃    Tổng tiền     ┃      Trạng thái      ┃");
-        System.out.println("┣━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━┫");
-
+        System.out.println("\n" + "--------------------------------------------------------------------------------------------------------");
+        System.out.printf("| %-4s | %-25s | %-23s | %-16s | %-20s |%n",
+                "ID", "Email Khách hàng", "Ngày đặt hàng", "Tổng tiền", "Trạng thái");
+        System.out.println("--------------------------------------------------------------------------------------------------------");
         for (Order order : orders) {
-            System.out.printf("┃ %-4d ┃ %-25s ┃ %-23s ┃ %,14.0f đ ┃ %-20s ┃\n",
+            System.out.printf("| %-4d | %-25s | %-23s | %,14.0f đ | %-20s |%n",
                     order.getId(),
                     order.getCustomerEmail(),
                     order.getCreatedAt().toString(),
                     order.getTotal(),
                     order.getStatus());
         }
-        System.out.println("┗━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━┛");
+        System.out.println("--------------------------------------------------------------------------------------------------------");
     }
     public void updateOrderStatus(int orderId, String status) {
         if (orderDAO.updateOrderStatus(orderId, status)) {
